@@ -49,10 +49,10 @@ const Home = () => {
             prods.map(e => (
               <li key={e.id} className="product-item col-medium-3">
                 <Link to={`/products/${e.id}`} className="product-img">
-                  <img src="https://picsum.photos/id/237/300/300" />
+                  <img src="https://picsum.photos/id/237/300/300" alt="product" />
                   <span className={`product-fav ${e.favs ? 'active' : ''}`} onClick={(event) => handleFav(event, e.id)}><FaHeart /></span>
                 </Link>
-                <h4 className="product-name"><a href="">Product 1</a></h4>
+                <h4 className="product-name"><Link to={`/products/${e.id}`}>Product 1</Link></h4>
                 <p className="product-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <button type="button">Add to cart</button>
               </li>

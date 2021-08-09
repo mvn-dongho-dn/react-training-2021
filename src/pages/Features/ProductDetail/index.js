@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, useParams, useRouteMatch } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { decrement, increment } from '../../../store/couterSlice';
 import { useDispatch, useSelector } from 'react-redux';
 

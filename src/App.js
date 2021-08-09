@@ -6,13 +6,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import {
   Switch,
-  Route,
-  useRouteMatch
+  Route
 } from "react-router-dom";
 import PrivateRoute from './core/guards/PrivateRoute';
 
 function App() {
-  const match = useRouteMatch('/products');
+  // const match = useRouteMatch('/products');
   
   return (
     <>
