@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Features from './pages/Features';
+import Auth from './pages/Auth';
+import Account from './pages/Account';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import {
+  Switch,
+  Route,
+  useRouteMatch
+} from "react-router-dom";
+import PrivateRoute from './core/guards/PrivateRoute';
 
 function App() {
+  const match = useRouteMatch('/products');
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main className="page-main">
+        <Switch>
+          <PrivateRoute path="/account">
+            <Account />
+          </PrivateRoute>
+          <Route path="/auth">
+            <Auth />
+          </Route>
+          <Route path="/">
+            <Features />
+          </Route>
+        </Switch>
+      </main>
+      <Footer />
+    </>
   );
 }
 
