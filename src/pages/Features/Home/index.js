@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import HeroBanner from '../../../components/HeroBanner';
 import { useDispatch } from 'react-redux';
 import { toggle } from '../../../store/favSlice';
+import { apiService } from '../../../core/services/api/api-service';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -38,6 +39,10 @@ const Home = () => {
     setProds(newProds);
     dispatch(toggle(id));
   }
+
+  useEffect(() => {
+    apiService.get('/api/users').then(e => console.log(e));
+  }, []);
 
   return (
     <div>

@@ -12,7 +12,7 @@ const Header = () => {
     <header className="page-header">
       <div className="container">
         <NavLink to="/" className="logo"><img src={logo} alt="logo" /></NavLink>
-        
+        {process.env.REACT_APP_API}
         <nav className="page-nav">
           <ul>
             <li>
